@@ -1,14 +1,13 @@
 import { Input } from './FilterForm.styled';
 
-export const FilterForm = () => {
+export const FilterForm = ({ onChange }) => {
   return (
     <>
       <Input
         type="text"
         name="filter"
         required="required"
-        //   onChange={inputHandler}
-        //   value={filter}
+        onChange={onChange}
         placeholder="Filter by name..."
       />
     </>

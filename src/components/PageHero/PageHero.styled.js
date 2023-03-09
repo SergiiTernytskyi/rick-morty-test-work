@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
-  padding-top: 86px;
-  margin-bottom: 16px;
+export const StyledDiv = styled.div`
+  margin: 10px 0 16px;
 `;
 
 export const Image = styled.img`
