@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const StyledLink = styled(Link)`
   position: absolute;
-  left: 54px;
+  left: 24px;
   top: 0;
   padding: 21px 0;
   margin-bottom: 10px;
@@ -23,5 +23,10 @@ export const StyledLink = styled(Link)`
 
   :hover {
     opacity: 0.6;
+  }
+
+  @media (min-width: 380px) {
+    left: 54px;
+    top: 0;
   }
 `;

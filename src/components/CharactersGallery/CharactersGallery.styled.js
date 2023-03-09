@@ -3,19 +3,33 @@ import { Link } from 'react-router-dom';
 
 export const CharaclersList = styled.ul`
   margin-bottom: 188px;
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 20px;
-  row-gap: 24px;
+
+  @media (min-width: 380px) {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 24px;
+  }
 `;
 
 export const CharacterItem = styled.li`
-  flex-basis: calc((100% - (3 * 20px)) / 4);
+  margin-bottom: 32px;
+  flex-basis: 100%;
   min-height: 244px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
     0px 2px 4px rgba(0, 0, 0, 0.14);
   border-radius: 4px;
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    flex-basis: calc((100% - (3 * 20px)) / 2);
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1024px) {
+    flex-basis: calc((100% - (3 * 20px)) / 4);
+    margin-bottom: 0;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -31,12 +45,16 @@ export const StyledLink = styled(Link)`
 
 export const CharacterImageThumb = styled.div`
   max-width: 100%;
-  max-height: 168px;
+  max-height: 232px;
   overflow: hidden;
+
+  @media (min-width: 380px) {
+    max-height: 168px;
+  }
 `;
 
 export const CharacterImage = styled.img`
-  max-width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 0 -36px;

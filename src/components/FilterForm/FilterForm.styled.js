@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Input = styled.input`
-  margin-bottom: 54px;
+  margin-bottom: 32px;
   width: 100%;
   height: 66px;
   padding: 16px 16px 16px 48px;
@@ -14,5 +14,9 @@ export const Input = styled.input`
   :valid,
   :focus {
     border: 1px solid #000000;
+  }
+
+  @media (min-width: 380px) {
+    margin-bottom: 54px;
   }
 `;

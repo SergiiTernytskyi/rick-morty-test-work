@@ -4,10 +4,10 @@ import { Image, StyledDiv } from './PageHero.styled';
 
 export const PageHero = () => {
   return (
-    <StyledDiv>
-      <Link to={'/'}>
+    <Link to={'/'}>
+      <StyledDiv>
         <Image src={image} alt="Rick and Morty" />
-      </Link>
-    </StyledDiv>
+      </StyledDiv>
+    </Link>
   );
 };

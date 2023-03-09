@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
 export const StyledDiv = styled.div`
-  margin: 10px 0 16px;
+  margin: 26px auto 16px auto;
+
+  max-width: 100%;
+
+  @media (min-width: 768px) {
+    margin: 20px auto 16px auto;
+    max-width: 600px;
+  }
 `;
 
 export const Image = styled.img`
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 600px;
-  height: 200px;
+  width: 100%;
 `;
