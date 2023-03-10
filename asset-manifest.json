@@ -1,22 +1,24 @@
 {
   "files": {
     "main.css": "/rick-morty-test-work/static/css/main.c3d5249d.css",
-    "main.js": "/rick-morty-test-work/static/js/main.19f36019.js",
-    "static/js/150.22d95451.chunk.js": "/rick-morty-test-work/static/js/150.22d95451.chunk.js",
-    "static/js/274.516c8005.chunk.js": "/rick-morty-test-work/static/js/274.516c8005.chunk.js",
-    "static/js/279.622f14e4.chunk.js": "/rick-morty-test-work/static/js/279.622f14e4.chunk.js",
-    "static/js/128.8d5f0eaf.chunk.js": "/rick-morty-test-work/static/js/128.8d5f0eaf.chunk.js",
+    "main.js": "/rick-morty-test-work/static/js/main.eb633509.js",
+    "static/js/150.150855b8.chunk.js": "/rick-morty-test-work/static/js/150.150855b8.chunk.js",
+    "static/js/274.a8d5e5a1.chunk.js": "/rick-morty-test-work/static/js/274.a8d5e5a1.chunk.js",
+    "static/js/673.d88310ae.chunk.js": "/rick-morty-test-work/static/js/673.d88310ae.chunk.js",
+    "static/js/617.6c8e40b3.chunk.js": "/rick-morty-test-work/static/js/617.6c8e40b3.chunk.js",
+    "static/js/692.d85e7cdd.chunk.js": "/rick-morty-test-work/static/js/692.d85e7cdd.chunk.js",
     "static/media/rickMorty.png": "/rick-morty-test-work/static/media/rickMorty.b5cf18161500855452b5.png",
     "index.html": "/rick-morty-test-work/index.html",
     "main.c3d5249d.css.map": "/rick-morty-test-work/static/css/main.c3d5249d.css.map",
-    "main.19f36019.js.map": "/rick-morty-test-work/static/js/main.19f36019.js.map",
-    "150.22d95451.chunk.js.map": "/rick-morty-test-work/static/js/150.22d95451.chunk.js.map",
-    "274.516c8005.chunk.js.map": "/rick-morty-test-work/static/js/274.516c8005.chunk.js.map",
-    "279.622f14e4.chunk.js.map": "/rick-morty-test-work/static/js/279.622f14e4.chunk.js.map",
-    "128.8d5f0eaf.chunk.js.map": "/rick-morty-test-work/static/js/128.8d5f0eaf.chunk.js.map"
+    "main.eb633509.js.map": "/rick-morty-test-work/static/js/main.eb633509.js.map",
+    "150.150855b8.chunk.js.map": "/rick-morty-test-work/static/js/150.150855b8.chunk.js.map",
+    "274.a8d5e5a1.chunk.js.map": "/rick-morty-test-work/static/js/274.a8d5e5a1.chunk.js.map",
+    "673.d88310ae.chunk.js.map": "/rick-morty-test-work/static/js/673.d88310ae.chunk.js.map",
+    "617.6c8e40b3.chunk.js.map": "/rick-morty-test-work/static/js/617.6c8e40b3.chunk.js.map",
+    "692.d85e7cdd.chunk.js.map": "/rick-morty-test-work/static/js/692.d85e7cdd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.19f36019.js"
+    "static/js/main.eb633509.js"
   ]
 }
