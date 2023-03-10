@@ -1,8 +1,8 @@
-import { Input } from './FilterForm.styled';
+import { Input, SearchIcon, StyledInputWrapper } from './FilterForm.styled';
 
 export const FilterForm = ({ onChange }) => {
   return (
-    <>
+    <StyledInputWrapper>
       <Input
         type="text"
         name="filter"
@@ -10,6 +10,7 @@ export const FilterForm = ({ onChange }) => {
         onChange={onChange}
         placeholder="Filter by name..."
       />
-    </>
+      <SearchIcon size={24} />
+    </StyledInputWrapper>
   );
 };

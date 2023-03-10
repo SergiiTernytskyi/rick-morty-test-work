@@ -4,7 +4,7 @@ export const Container = styled.div`
   margin: 0 auto;
   width: 100%;
 
-  @media (min-width: 380px) {
+  @media (min-width: 1440px) {
     width: 390px;
   }
 `;
@@ -17,7 +17,7 @@ export const StyledImage = styled.img`
   border: 5px solid #f2f2f7;
   border-radius: 50%;
 
-  @media (min-width: 380px) {
+  @media (min-width: 1440px) {
     margin: 10px auto 16px;
     width: 300px;
     height: 300px;
@@ -32,7 +32,7 @@ export const StyledName = styled.h2`
   text-align: center;
   color: #081f32;
 
-  @media (min-width: 380px) {
+  @media (min-width: 1440px) {
     margin-bottom: 48px;
     font-size: 48px;
     line-height: 1.17;
@@ -48,7 +48,7 @@ export const StyledTitle = styled.h3`
   text-align: start;
   color: #8e8e93;
 
-  @media (min-width: 380px) {
+  @media (min-width: 1440px) {
     margin-bottom: 48px;
     text-align: center;
   }
@@ -58,7 +58,7 @@ export const StyledList = styled.ul`
   margin-bottom: 86px;
   padding: 9px 16px;
 
-  @media (min-width: 380px) {
+  @media (min-width: 1440px) {
     margin-bottom: 142px;
   }
 `;

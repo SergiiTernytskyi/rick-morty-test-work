@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const CharaclersList = styled.ul`
   margin-bottom: 188px;
 
-  @media (min-width: 380px) {
+  @media (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
@@ -22,11 +22,11 @@ export const CharacterItem = styled.li`
   overflow: hidden;
 
   @media (min-width: 768px) {
-    flex-basis: calc((100% - (3 * 20px)) / 2);
+    flex-basis: calc((100% - 20px) / 2);
     margin-bottom: 0;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     flex-basis: calc((100% - (3 * 20px)) / 4);
     margin-bottom: 0;
   }
@@ -45,11 +45,15 @@ export const StyledLink = styled(Link)`
 
 export const CharacterImageThumb = styled.div`
   max-width: 100%;
-  max-height: 232px;
+  height: 232px;
   overflow: hidden;
 
-  @media (min-width: 380px) {
-    max-height: 168px;
+  @media (min-width: 768px) {
+    height: 334px;
+  }
+
+  @media (min-width: 1440px) {
+    height: 168px;
   }
 `;
 

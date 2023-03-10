@@ -25,7 +25,7 @@ export const StyledLink = styled(Link)`
     opacity: 0.6;
   }
 
-  @media (min-width: 380px) {
+  @media (min-width: 1440px) {
     left: 54px;
     top: 0;
   }
