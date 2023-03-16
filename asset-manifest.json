@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/rick-morty-test-work/static/css/main.c3d5249d.css",
-    "main.js": "/rick-morty-test-work/static/js/main.eb633509.js",
-    "static/js/150.150855b8.chunk.js": "/rick-morty-test-work/static/js/150.150855b8.chunk.js",
-    "static/js/274.a8d5e5a1.chunk.js": "/rick-morty-test-work/static/js/274.a8d5e5a1.chunk.js",
-    "static/js/673.d88310ae.chunk.js": "/rick-morty-test-work/static/js/673.d88310ae.chunk.js",
-    "static/js/617.6c8e40b3.chunk.js": "/rick-morty-test-work/static/js/617.6c8e40b3.chunk.js",
-    "static/js/692.d85e7cdd.chunk.js": "/rick-morty-test-work/static/js/692.d85e7cdd.chunk.js",
+    "main.js": "/rick-morty-test-work/static/js/main.ddb627bb.js",
+    "static/js/150.14363450.chunk.js": "/rick-morty-test-work/static/js/150.14363450.chunk.js",
+    "static/js/274.e8b9110e.chunk.js": "/rick-morty-test-work/static/js/274.e8b9110e.chunk.js",
+    "static/js/673.d68c7ad7.chunk.js": "/rick-morty-test-work/static/js/673.d68c7ad7.chunk.js",
+    "static/js/617.49d9c33f.chunk.js": "/rick-morty-test-work/static/js/617.49d9c33f.chunk.js",
+    "static/js/692.5080ea7e.chunk.js": "/rick-morty-test-work/static/js/692.5080ea7e.chunk.js",
     "static/media/rickMorty.png": "/rick-morty-test-work/static/media/rickMorty.b5cf18161500855452b5.png",
     "index.html": "/rick-morty-test-work/index.html",
     "main.c3d5249d.css.map": "/rick-morty-test-work/static/css/main.c3d5249d.css.map",
-    "main.eb633509.js.map": "/rick-morty-test-work/static/js/main.eb633509.js.map",
-    "150.150855b8.chunk.js.map": "/rick-morty-test-work/static/js/150.150855b8.chunk.js.map",
-    "274.a8d5e5a1.chunk.js.map": "/rick-morty-test-work/static/js/274.a8d5e5a1.chunk.js.map",
-    "673.d88310ae.chunk.js.map": "/rick-morty-test-work/static/js/673.d88310ae.chunk.js.map",
-    "617.6c8e40b3.chunk.js.map": "/rick-morty-test-work/static/js/617.6c8e40b3.chunk.js.map",
-    "692.d85e7cdd.chunk.js.map": "/rick-morty-test-work/static/js/692.d85e7cdd.chunk.js.map"
+    "main.ddb627bb.js.map": "/rick-morty-test-work/static/js/main.ddb627bb.js.map",
+    "150.14363450.chunk.js.map": "/rick-morty-test-work/static/js/150.14363450.chunk.js.map",
+    "274.e8b9110e.chunk.js.map": "/rick-morty-test-work/static/js/274.e8b9110e.chunk.js.map",
+    "673.d68c7ad7.chunk.js.map": "/rick-morty-test-work/static/js/673.d68c7ad7.chunk.js.map",
+    "617.49d9c33f.chunk.js.map": "/rick-morty-test-work/static/js/617.49d9c33f.chunk.js.map",
+    "692.5080ea7e.chunk.js.map": "/rick-morty-test-work/static/js/692.5080ea7e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.eb633509.js"
+    "static/js/main.ddb627bb.js"
   ]
 }
