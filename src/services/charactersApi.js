@@ -3,7 +3,7 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://rickandmortyapi.com/api';
 
 export async function getAllCharacters() {
-  const axiosURL = '/character';
+  const axiosURL = '/character/';
   const { data } = await axios.get(axiosURL);
   return data;
 }
@@ -19,3 +19,6 @@ export async function getCharacterById(id) {
   const { data } = await axios.get(axiosURL);
   return data;
 }
+
+// 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
+//

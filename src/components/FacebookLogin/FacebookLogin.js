@@ -7,10 +7,11 @@ export const FacebookButton = ({ onLogin, onUser, onError }) => {
       style={{
         backgroundColor: '#4267b2',
         color: '#fff',
-        fontSize: '16px',
-        padding: '12px 24px',
+        fontSize: '14px',
+        padding: '6px 8px',
         border: 'none',
         borderRadius: '4px',
+        marginTop: '-4px',
       }}
       onSuccess={response => {
         if (response.accessToken) {

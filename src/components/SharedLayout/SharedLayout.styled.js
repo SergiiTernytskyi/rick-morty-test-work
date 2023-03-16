@@ -14,6 +14,7 @@ export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 15px;
   margin: 0 auto;
 
   width: 100%;
@@ -51,5 +52,7 @@ export const UserImage = styled.img`
   @media (min-width: 768px) {
     display: block;
     border-radius: 50%;
+    width: 50px;
+    height: 50px;
   }
 `;

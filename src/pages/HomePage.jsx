@@ -70,7 +70,7 @@ const HomePage = ({ canRender, error, onError }) => {
   };
 
   const filterHandler = event => {
-    const characterFilter = event.target.value;
+    const characterFilter = event.target.value.trim();
     updateQueryString(characterFilter);
   };
 
@@ -81,7 +81,12 @@ const HomePage = ({ canRender, error, onError }) => {
       {canRender && <FilterForm onChange={filterHandler} />}
       {error && <ErrorMessage>{error}</ErrorMessage>}
       {canRender && characters.length > 0 && !error && (
-        <CharactersGallery characters={characters} location={location} />
+        <CharactersGallery
+          characters={characters.sort((firstCharacter, secondCharacter) =>
+            firstCharacter.name.localeCompare(secondCharacter.name)
+          )}
+          location={location}
+        />
       )}
     </main>
   );
