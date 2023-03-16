@@ -8,34 +8,35 @@ import { FilterForm } from 'components/FilterForm/FilterForm';
 
 import { getAllCharacters, getCharacterByName } from 'services/charactersApi';
 
-const HomePage = () => {
+const HomePage = ({ canRender, error, onError }) => {
   const [characters, setCharacters] = useState([]);
-  const [error, setError] = useState(null);
   const location = useLocation();
-
   const [searchParams, setSearchParams] = useSearchParams();
   const characterName = searchParams?.get('name') ?? '';
 
+  const sortCharacter = character => {
+    return character.results
+      .map(({ id, name, image, species }) => {
+        return { id, name, image, species };
+      })
+      .sort((firstCharacter, secondCharacter) =>
+        firstCharacter.name.localeCompare(secondCharacter.name)
+      );
+  };
+
   useEffect(() => {
-    setError(null);
+    onError(null);
 
     const getCharacters = async () => {
       try {
         const data = await getAllCharacters();
-        const sortedCharacters = data.results
-          .map(({ id, name, image, species }) => {
-            return { id, name, image, species };
-          })
-          .sort((firstCharacter, secondCharacter) =>
-            firstCharacter.name.localeCompare(secondCharacter.name)
-          );
 
-        setCharacters(sortedCharacters);
+        setCharacters(sortCharacter(data));
       } catch (error) {
         if (error.response.status === 404) {
-          return setError('Not found');
+          return onError('Not found');
         }
-        setError('Something went wrong');
+        onError('Something went wrong');
       }
     };
 
@@ -44,23 +45,15 @@ const HomePage = () => {
         const data = await getCharacterByName(characterName);
 
         if (data === []) {
-          setError('We did not find anything');
+          onError('We did not find anything');
         }
 
-        const sortedCharacters = data.results
-          .map(({ id, name, image, species }) => {
-            return { id, name, image, species };
-          })
-          .sort((firstCharacter, secondCharacter) =>
-            firstCharacter.name.localeCompare(secondCharacter.name)
-          );
-
-        setCharacters(sortedCharacters);
+        setCharacters(sortCharacter(data));
       } catch (error) {
         if (error.response.status === 404) {
-          return setError('Not found');
+          return onError('Not found');
         }
-        setError('Something went wrong');
+        onError('Something went wrong');
       }
     };
 
@@ -69,7 +62,7 @@ const HomePage = () => {
       return;
     }
     getCharacters();
-  }, [characterName]);
+  }, [characterName, onError]);
 
   const updateQueryString = name => {
     const nextParams = name !== '' ? { name } : {};
@@ -77,8 +70,6 @@ const HomePage = () => {
   };
 
   const filterHandler = event => {
-    event.preventDefault();
-
     const characterFilter = event.target.value;
     updateQueryString(characterFilter);
   };
@@ -86,9 +77,10 @@ const HomePage = () => {
   return (
     <main>
       <PageHero />
-      <FilterForm onChange={filterHandler} />
+      {!canRender && <ErrorMessage>Please Log In</ErrorMessage>}
+      {canRender && <FilterForm onChange={filterHandler} />}
       {error && <ErrorMessage>{error}</ErrorMessage>}
-      {characters.length > 0 && !error && (
+      {canRender && characters.length > 0 && !error && (
         <CharactersGallery characters={characters} location={location} />
       )}
     </main>
