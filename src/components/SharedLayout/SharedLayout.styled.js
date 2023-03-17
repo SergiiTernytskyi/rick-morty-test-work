@@ -13,12 +13,16 @@ export const Container = styled.div`
 export const StyledHeader = styled.header`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 15px;
   margin: 0 auto;
 
   width: 100%;
   height: 66px;
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }
 
   @media (min-width: 1440px) {
     padding: 0 15px;
