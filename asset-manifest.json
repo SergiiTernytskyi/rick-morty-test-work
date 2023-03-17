@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/rick-morty-test-work/static/css/main.c3d5249d.css",
-    "main.js": "/rick-morty-test-work/static/js/main.e232c616.js",
+    "main.js": "/rick-morty-test-work/static/js/main.9bdced90.js",
     "static/js/730.86ea5269.chunk.js": "/rick-morty-test-work/static/js/730.86ea5269.chunk.js",
     "static/js/274.3bf280a2.chunk.js": "/rick-morty-test-work/static/js/274.3bf280a2.chunk.js",
     "static/js/888.1359bf27.chunk.js": "/rick-morty-test-work/static/js/888.1359bf27.chunk.js",
@@ -9,7 +9,7 @@
     "static/media/rickMorty.png": "/rick-morty-test-work/static/media/rickMorty.b5cf18161500855452b5.png",
     "index.html": "/rick-morty-test-work/index.html",
     "main.c3d5249d.css.map": "/rick-morty-test-work/static/css/main.c3d5249d.css.map",
-    "main.e232c616.js.map": "/rick-morty-test-work/static/js/main.e232c616.js.map",
+    "main.9bdced90.js.map": "/rick-morty-test-work/static/js/main.9bdced90.js.map",
     "730.86ea5269.chunk.js.map": "/rick-morty-test-work/static/js/730.86ea5269.chunk.js.map",
     "274.3bf280a2.chunk.js.map": "/rick-morty-test-work/static/js/274.3bf280a2.chunk.js.map",
     "888.1359bf27.chunk.js.map": "/rick-morty-test-work/static/js/888.1359bf27.chunk.js.map",
@@ -17,6 +17,6 @@
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.e232c616.js"
+    "static/js/main.9bdced90.js"
   ]
 }
