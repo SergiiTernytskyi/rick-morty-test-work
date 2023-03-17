@@ -1,4 +1,4 @@
-import { useState, lazy, useEffect } from 'react';
+import { useState, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { SharedLayout } from './SharedLayout/SharedLayout ';
