@@ -1,6 +1,5 @@
-import { lazy } from 'react';
+import { useState, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
 
 import { SharedLayout } from './SharedLayout/SharedLayout ';
 
@@ -9,7 +8,6 @@ const CharacterPage = lazy(() => import('pages/CharacterPage'));
 
 export const App = () => {
   const [canRender, setCanRender] = useState(false);
-  const [error, setError] = useState(null);
 
   const onLogin = () => {
     setCanRender(true);
@@ -19,24 +17,9 @@ export const App = () => {
     <Routes>
       <Route
         path="/"
-        element={
-          <SharedLayout
-            canRender={canRender}
-            onLogin={onLogin}
-            onError={() => setError()}
-          />
-        }
+        element={<SharedLayout canRender={canRender} onLogin={onLogin} />}
       >
-        <Route
-          index
-          element={
-            <HomePage
-              canRender={canRender}
-              error={error}
-              onError={() => setError()}
-            />
-          }
-        />
+        <Route index element={<HomePage canRender={canRender} />} />
         <Route path="characters/:characterId" element={<CharacterPage />} />
       </Route>
     </Routes>

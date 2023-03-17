@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const CharaclersList = styled.ul`
-  margin-bottom: 188px;
+  margin-bottom: 88px;
 
   @media (min-width: 768px) {
     display: flex;

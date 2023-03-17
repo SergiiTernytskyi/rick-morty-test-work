@@ -7,12 +7,18 @@ import { ErrorMessage } from 'components/ErrorMessage/ErrorMessage';
 import { FilterForm } from 'components/FilterForm/FilterForm';
 
 import { getAllCharacters, getCharacterByName } from 'services/charactersApi';
+import { Pagination } from 'components/Pagination/Pagination';
 
-const HomePage = ({ canRender, error, onError }) => {
+const HomePage = ({ canRender }) => {
   const [characters, setCharacters] = useState([]);
+  const [error, setError] = useState(null);
+  const [totalPages, setTotalPages] = useState('');
+
   const location = useLocation();
+
   const [searchParams, setSearchParams] = useSearchParams();
   const characterName = searchParams?.get('name') ?? '';
+  const appPage = searchParams?.get('page') ?? 1;
 
   const sortCharacter = character => {
     return character.results
@@ -25,53 +31,76 @@ const HomePage = ({ canRender, error, onError }) => {
   };
 
   useEffect(() => {
-    onError(null);
+    setError(null);
 
     const getCharacters = async () => {
       try {
-        const data = await getAllCharacters();
+        const data = await getAllCharacters(appPage);
 
+        setTotalPages(data.info.pages);
         setCharacters(sortCharacter(data));
       } catch (error) {
         if (error.response.status === 404) {
-          return onError('Not found');
+          return setError('Not found');
         }
-        onError('Something went wrong');
+        setError('Something went wrong');
       }
     };
 
     const getFilteredCharacters = async () => {
       try {
-        const data = await getCharacterByName(characterName);
+        const data = await getCharacterByName(characterName, appPage);
 
-        if (data === []) {
-          onError('We did not find anything');
+        if (!data) {
+          setError('We did not find anything');
         }
 
+        setTotalPages(data.info.pages);
         setCharacters(sortCharacter(data));
       } catch (error) {
         if (error.response.status === 404) {
-          return onError('Not found');
+          return setError('Not found');
         }
-        onError('Something went wrong');
+        setError('Something went wrong');
       }
     };
+
+    if (!canRender) {
+      return;
+    }
 
     if (characterName) {
       getFilteredCharacters(characterName);
       return;
     }
     getCharacters();
-  }, [characterName, onError]);
+  }, [appPage, canRender, characterName]);
 
-  const updateQueryString = name => {
-    const nextParams = name !== '' ? { name } : {};
-    setSearchParams(nextParams);
+  const updateQueryString = (name, page = 1) => {
+    const nextName = name !== '' ? { name } : {};
+    const nextPage = page !== '' ? { page } : {};
+    setSearchParams({ ...nextName, ...nextPage });
   };
 
   const filterHandler = event => {
     const characterFilter = event.target.value.trim();
     updateQueryString(characterFilter);
+  };
+
+  const prevHandler = () => {
+    if (Number(appPage) < 2) {
+      return;
+    }
+    const prevPage = Number(appPage) - 1;
+    updateQueryString(characterName, prevPage);
+  };
+
+  const nextHandler = () => {
+    if (Number(appPage) === totalPages) {
+      return;
+    }
+    const nextPage = Number(appPage) + 1;
+    updateQueryString(characterName, nextPage);
   };
 
   return (
@@ -86,6 +115,16 @@ const HomePage = ({ canRender, error, onError }) => {
             firstCharacter.name.localeCompare(secondCharacter.name)
           )}
           location={location}
+        />
+      )}
+      {canRender && totalPages >= 2 && (
+        <Pagination
+          prevPage={prevHandler}
+          nextPage={nextHandler}
+          firstPage={() => updateQueryString(characterName, 1)}
+          lastPage={() => updateQueryString(characterName, totalPages)}
+          totalPages={totalPages}
+          currentPage={appPage}
         />
       )}
     </main>

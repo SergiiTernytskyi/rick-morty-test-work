@@ -3,68 +3,28 @@ import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 
 import { FacebookButton } from 'components/FacebookLogin/FacebookLogin';
-
-import {
-  Container,
-  StyledHeader,
-  StyledUser,
-  UserImage,
-  UserInfo,
-} from './SharedLayout.styled';
 import { GoogleLoginButton } from 'components/GoogleLoginButton/GoogleLoginButton';
+import { UserInfo } from 'components/UserInfo/UserInfo';
 
-export const SharedLayout = ({ canRender, onLogin, onError }) => {
-  const [facebookUser, setFacebookUser] = useState(null);
-  const [googleUser, setGoogleUser] = useState(null);
+import { Container, StyledHeader } from './SharedLayout.styled';
 
-  const getFacebookUser = value => {
-    setFacebookUser(value);
-  };
+export const SharedLayout = ({ canRender, onLogin }) => {
+  const [user, setUser] = useState('');
 
-  const getGoogleUser = value => {
-    setGoogleUser(value);
+  const getUser = value => {
+    setUser(value);
   };
 
   return (
     <>
       <StyledHeader>
-        {!canRender && (
-          <FacebookButton
-            onLogin={onLogin}
-            onUser={getFacebookUser}
-            onError={onError}
-          />
-        )}
-
-        {!canRender && (
-          <GoogleLoginButton
-            onLogin={onLogin}
-            onUser={getGoogleUser}
-            onError={onError}
-          />
-        )}
-
-        {canRender && facebookUser && (
-          <StyledUser>
-            <UserInfo>
-              Hello, {facebookUser.name}
-              <UserImage
-                src={facebookUser.picture.data.url}
-                alt={facebookUser.name}
-              />
-            </UserInfo>
-          </StyledUser>
-        )}
-
-        {canRender && googleUser && (
-          <StyledUser>
-            <UserInfo>
-              Hello, {googleUser.name}
-              <UserImage src={googleUser.picture} alt={googleUser.name} />
-            </UserInfo>
-          </StyledUser>
+        {!canRender && <FacebookButton onLogin={onLogin} onUser={getUser} />}
+        {!canRender && <GoogleLoginButton onLogin={onLogin} onUser={getUser} />}
+        {canRender && user && (
+          <UserInfo name={user.name} picture={user.picture} />
         )}
       </StyledHeader>
+
       <Container>
         <Suspense fallback={null}>
           <Outlet />
