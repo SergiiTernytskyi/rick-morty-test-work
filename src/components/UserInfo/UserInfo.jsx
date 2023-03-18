@@ -1,4 +1,4 @@
-import { StyledUser, UserImage, UserMeta } from './UserInfo.styled';
+import { UserImage, UserMeta } from './UserInfo.styled';
 
 export const UserInfo = ({ name, picture }) => {
   return (

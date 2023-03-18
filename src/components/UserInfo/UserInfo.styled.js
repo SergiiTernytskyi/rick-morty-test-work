@@ -1,15 +1,5 @@
 import styled from 'styled-components';
 
-export const StyledUser = styled.div`
-  margin: 0 auto;
-  padding: 0 24px;
-
-  @media (min-width: 1440px) {
-    padding: 0 15px;
-    max-width: 1050px;
-  }
-`;
-
 export const UserMeta = styled.div`
   display: flex;
   flex-direction: column;
